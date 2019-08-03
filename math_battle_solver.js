@@ -13,7 +13,7 @@ function solve() {
 	return Number(result) == eval(expression)
 }
 
-function main(maxScore) {
+function main(maxScore, terminate = false) {
 	document.getElementById("button_correct").click()
 	for (i = 0; i < maxScore; i++){
 		if (solve()){
@@ -23,12 +23,14 @@ function main(maxScore) {
 			document.getElementById("button_wrong").click()	
 		}
 	}
-	for (i = 0; i < 3; i++){
-		if (!solve()){
-			document.getElementById("button_correct").click()
-		}
-		else{
-			document.getElementById("button_wrong").click()	
+	if (terminate == true){
+		for (i = 0; i < 3; i++){
+			if (!solve()){
+				document.getElementById("button_correct").click()
+			}
+			else{
+				document.getElementById("button_wrong").click()	
+			}
 		}
 	}
 }
