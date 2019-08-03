@@ -13,7 +13,7 @@ function solve() {
 	return Number(result) == eval(expression)
 }
 
-function main(maxScore, terminate = false) {
+function run(maxScore, terminate = false) {
 	document.getElementById("button_correct").click()
 	for (i = 0; i < maxScore; i++){
 		if (solve()){
